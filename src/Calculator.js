@@ -119,6 +119,7 @@ const evaluateSubExpressionAt = (expression, openParens) => {
   const closeParens = expression.indexOf(CLOSE_PARENS, openParens)
   const subExpression = expression.slice(openParens + 1, closeParens)
   const result = evaluate(subExpression)
+
   return expression.slice(0, openParens) +
          result +
          expression.slice(closeParens + 1)
