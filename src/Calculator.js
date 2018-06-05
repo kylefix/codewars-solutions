@@ -35,16 +35,16 @@ const DIVIDE = '/'
 const CLOSE_PARENS = ')'
 const OPEN_PARENS = '('
 const OPERATIONS = {
-  [MULTIPLY]: (a, b) => a * b,
-  [ADD]: (a, b) => a + b,
+  [MULTIPLY]:  (a, b) => a * b,
+  [ADD]:       (a, b) => a + b,
   [SUBSTRACT]: (a, b) => a - b,
-  [DIVIDE]: (a, b) => a / b
+  [DIVIDE]:    (a, b) => a / b
 }
 const ALL_OPERATORS = Object.keys(OPERATIONS)
 
 const count = (arr, str) => arr.reduce((count, ch) => ch === str ? ++count : count, 0)
 const indexOf = (str, ...searchValues) => str.findIndex(ch => searchValues.includes(ch))
-const push = (xs, ...x) => (xs.push(...x), xs)
+const push = (xs, ...x) => ((xs.push(...x), xs))
 const findLastIndex = (arr, fn) => {
   const index = [...arr].reverse().findIndex(fn)
   return ~index ? arr.length + ~index : -1
